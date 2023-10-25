@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "FRONTEND_TOOL_JWT_PRIVATE_KEY",
+  "db": "MONGO_URI"
+}
