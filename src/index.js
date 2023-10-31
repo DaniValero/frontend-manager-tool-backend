@@ -18,6 +18,5 @@ app.use("/login", login);
 app.use("/registro", registro);
 app.use("/user", user);
 
-app.listen(5000, () =>
-  console.log("Reptiliano afroamericano")
-);
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log(`Server up, port: ${port}`));

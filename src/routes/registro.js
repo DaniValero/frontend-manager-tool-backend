@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const router = express.Router();
 
 router.post("/", validateBody, async (req, res) => {
-  console.log("registro");
 
   let user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send("El usuario ya está registrado");

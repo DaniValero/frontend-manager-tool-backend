@@ -16,7 +16,6 @@ const reqSchema = Joi.object({
 });
 
 router.post("/", validator(reqSchema), async (req, res) => {
-  console.log("hola");
 
   let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("Email y password invalidos");
