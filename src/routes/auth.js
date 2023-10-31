@@ -27,7 +27,7 @@ router.post("/", validator(reqSchema), async (req, res) => {
   res
     .header("x-auth-token", token)
     .header("access-control-expose-headers", "x-auth-token")
-    .send("Usuario autentificado");
+    .json("Usuario autentificado");
 });
 
 module.exports = router;
