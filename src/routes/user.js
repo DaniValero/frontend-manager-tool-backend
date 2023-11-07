@@ -18,6 +18,19 @@ router.get("/all", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const user = await User.findOne({ userId: req.params.id });
+
+    if (!user) return res.status(400).send("User not found");
+
+    res.send(user).status(200);
+  } catch {
+    res.status(500).send("An error occurred while fetching users.");
+  }
+});
+
+
 
 router.get("/:id/progress", async (req, res) => {
 
